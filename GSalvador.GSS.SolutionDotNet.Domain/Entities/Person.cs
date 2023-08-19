@@ -11,18 +11,25 @@ public sealed class Person
 
     public Person(string name, string document, string phone)
     {
-        Validation(name, document, phone);
+        var (validatedName, validatedDocument, validatedPhone) = Validation(name, document, phone);
+
+        Name = validatedName;
+        Document = validatedDocument;
+        Phone = validatedPhone;
     }
 
     public Person(int id, string name, string document, string phone)
     {
         DomainValidationException.When(id < 0, "Invalid Id value");
-        Validation(name, document, phone);
+        var (validatedName, validatedDocument, validatedPhone) = Validation(name, document, phone);
 
         Id = id;
+        Name = validatedName;
+        Document = validatedDocument;
+        Phone = validatedPhone;
     }
 
-    private void Validation(string name, string document, string phone)
+    private (string, string, string) Validation(string name, string document, string phone)
     {
         DomainValidationException.When(string.IsNullOrEmpty(name), "Name is required");
         DomainValidationException.When(name.Length < 3, "Name must be at least 3 characters");
@@ -33,8 +40,6 @@ public sealed class Person
         DomainValidationException.When(string.IsNullOrEmpty(phone), "Phone is required");
         // create validation for phone type (99) 99999-9999
 
-        Name = name;
-        Document = document;
-        Phone = phone;
+        return (name, document, phone);
     }
 }
