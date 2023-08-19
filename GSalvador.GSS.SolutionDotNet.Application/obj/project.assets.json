@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "GSalvador.GSS.SolutionDotNet.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GSalvador.GSS.SolutionDotNet.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSalvador.GSS.SolutionDotNet.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GSalvador.GSS.SolutionDotNet.Domain/1.0.0": {
+      "type": "project",
+      "path": "../GSalvador.GSS.SolutionDotNet.Domain/GSalvador.GSS.SolutionDotNet.Domain.csproj",
+      "msbuildProject": "../GSalvador.GSS.SolutionDotNet.Domain/GSalvador.GSS.SolutionDotNet.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "GSalvador.GSS.SolutionDotNet.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\user\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\user\\Documents\\Programação\\Back End\\C#\\web-api-dot-net-core\\GSalvador.GSS.SolutionDotNet.Domain\\GSalvador.GSS.SolutionDotNet.Domain.csproj": {
+              "projectPath": "C:\\Users\\user\\Documents\\Programação\\Back End\\C#\\web-api-dot-net-core\\GSalvador.GSS.SolutionDotNet.Domain\\GSalvador.GSS.SolutionDotNet.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
