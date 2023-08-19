@@ -8,6 +8,7 @@ public class Product
     public string Name { get; private set; }
     public string Code { get; private set; }
     public decimal Price { get; private set; }
+    public ICollection<Purchase> Purchases { get; set; }
 
     public Product(string name, string code, decimal price)
     {
@@ -16,6 +17,7 @@ public class Product
         Name = name;
         Code = code;
         Price = price;
+        Purchases = new List<Purchase>();
     }
 
     public Product(int id, string name, string code, decimal price)
@@ -27,6 +29,7 @@ public class Product
         Name = name;
         Code = code;
         Price = price;
+        Purchases = new List<Purchase>();
     }
 
     private void Validation(string name, string code, decimal price)

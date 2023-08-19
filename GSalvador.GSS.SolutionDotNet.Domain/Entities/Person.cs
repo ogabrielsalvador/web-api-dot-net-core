@@ -8,6 +8,7 @@ public sealed class Person
     public string Name { get; private set; }
     public string Document { get; private set; }
     public string Phone { get; private set; }
+    public ICollection<Purchase> Purchases { get; set; }
 
     public Person(string name, string document, string phone)
     {
@@ -16,6 +17,7 @@ public sealed class Person
         Name = validatedName;
         Document = validatedDocument;
         Phone = validatedPhone;
+        Purchases = new List<Purchase>();
     }
 
     public Person(int id, string name, string document, string phone)
@@ -27,6 +29,7 @@ public sealed class Person
         Name = validatedName;
         Document = validatedDocument;
         Phone = validatedPhone;
+        Purchases = new List<Purchase>();
     }
 
     private (string, string, string) Validation(string name, string document, string phone)
